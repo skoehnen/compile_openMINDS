@@ -5,7 +5,7 @@ def get_property_list(schema_dictionary):
     print(schema_dictionary["properties"])
 
 # Read schema
-filename = "openMINDS/v3.0/core/dataset.schema.json"    # Testing with dataset schema
+filename = "openMINDS/v3.0/products/copyright.schema.json"    # Testing with dataset schema
 with open(filename,'r') as f:
     schema_dictionary = json.loads(f.read())
 
@@ -24,7 +24,7 @@ with open(filename,'r') as f:
         class_dictionary[property] = None
 
     #print(class_dictionary)
-    cls = type("Dataset", (object,), class_dictionary)
+    cls = type("Copyright", (object,), class_dictionary)
 
     print(cls)
     print(cls.__doc__)
