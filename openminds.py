@@ -3,7 +3,7 @@ from pathlib import Path
 
 class OpenMINDS:
     def __init__(self):
-        for filename in Path('./openMINDS').glob('**/*.schema.json'):
+        for filename in Path('./openMINDS/v3.0/').glob('**/*.schema.json'):
             stripped_filename = os.path.splitext(
                                     os.path.splitext(
                                         os.path.basename(filename)
