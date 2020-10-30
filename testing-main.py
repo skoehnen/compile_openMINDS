@@ -1,6 +1,20 @@
 import json
 from jsonschema import validate, Draft7Validator
 
+def build_constructor(schema_dictionary):
+    required_properties = schema_dictionary["required"]
+    constructor_string = "lambda self"
+
+    for property in required_properties:
+        constructor_string += ", " + property
+
+    constructor_string += ": "
+
+    for property in required_properties:
+        constructor_string += ", " + property
+
+    print(constructor_string)
+
 def get_property_list(schema_dictionary):
     print(schema_dictionary["properties"])
 
@@ -23,9 +37,13 @@ with open(filename,'r') as f:
         #print(property)
         class_dictionary[property] = None
 
+    class_dictionary["__init__"] = build_constructor(schema_dictionary)
+
     #print(class_dictionary)
     cls = type("Copyright", (object,), class_dictionary)
 
     print(cls)
     print(cls.__doc__)
     print(vars(cls))
+
+    test_object = cls("Hello world")
