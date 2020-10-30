@@ -15,9 +15,6 @@ def build_constructor(schema_dictionary):
 
     print(constructor_string)
 
-def get_property_list(schema_dictionary):
-    print(schema_dictionary["properties"])
-
 # Read schema
 filename = "openMINDS/v3.0/products/copyright.schema.json"    # Testing with dataset schema
 with open(filename,'r') as f:
