@@ -8,3 +8,5 @@ print(vars(copyright_class))
 copyright_obj = copyright_class(1,2,3,4)
 
 print(copyright_obj.year)
+
+generator.generate_file(om.COPYRIGHT)
