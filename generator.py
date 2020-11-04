@@ -93,5 +93,5 @@ def generate_file(schema_name):
         template_string += "\n$init"
         # Prepare template for substitution
         class_string_template = Template(template_string)
-        # Print the "file" for now
+        # Print the "file", for now
         print(class_string_template.substitute({"schema_name": schema_name, "init":constructor_string}))
